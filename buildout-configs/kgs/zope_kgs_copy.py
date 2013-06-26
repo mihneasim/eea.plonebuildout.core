@@ -10,7 +10,7 @@ import sys
 import urllib
 
 
-origins = {}    #this holds mappings of filename > original url
+origins = {}    #this holds mappings of original url > filename
 
 
 def commented(lines):
