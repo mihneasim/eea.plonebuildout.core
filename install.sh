@@ -32,7 +32,7 @@ echo "Installing virtualenv"
 wget --no-check-certificate "https://raw.github.com/pypa/virtualenv/master/virtualenv.py" -O "/tmp/virtualenv.py"
 
 echo "Running: python2.6 /tmp/virtualenv.py --clear ."
-python2.6 "/tmp/virtualenv.py" --clear .
+python2.6 "/tmp/virtualenv.py" --clear --distribute  .
 rm /tmp/virtualenv.py*
 
 #echo "Updating distribute: ./bin/easy_install" $SETUPTOOLS
