@@ -6,4 +6,4 @@ EEA Plone buildout core
 Dependencies: 
 
 * python
-* openssl-devel
+* openssl-devel on Debian/Ubuntu, openssl-dev on RedHat/CentOS
