@@ -1,17 +1,10 @@
 <VirtualHost *:80>
-    ServerAdmin helpdesk@eionet.europa.eu
-    ServerName copernicus.eea.europa.eu
-    ServerAlias copernicus.eea.europa.eu
-    ServerAlias kite.eea.europa.eu
-
-    CustomLog /var/local/www-logs/copernicus/access combined
-    ErrorLog /var/local/www-logs/copernicus/error
+    ServerAdmin ${conf:server-admin}
+    ServerName ${conf:www-domain}
+    ServerAlias ${conf:www-domain}
 
     RewriteEngine On
-    RewriteCond %{HTTP_HOST} =copernicus.eea.europa.eu [or]
-    RewriteCond %{HTTP_HOST} =kite.eea.europa.eu
-    RewriteRule ^/(.*) http://land.copernicus.eu/$1 [R,L]
 
-    RewriteRule ^/(.*) http://localhost:9993/VirtualHostBase/http/land.copernicus.eu:80/copernicus/VirtualHostRoot/$1 [P,L]
+    RewriteRule ^/(.*) http://localhost:${conf:pound-port}/VirtualHostBase/http/${conf:www-domain}:80/${conf:plone-site}/VirtualHostRoot/$1 [P,L]
 
 </VirtualHost>
