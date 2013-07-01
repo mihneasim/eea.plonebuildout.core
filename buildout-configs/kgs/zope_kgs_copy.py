@@ -65,7 +65,7 @@ def process_cfg(filename, fromurl):
                 _buildout.append(line)
             elif after_buildout:
                 _after.append(line)
-            
+
         vfile.truncate()
         if fromurl != 'versions.cfg':
             vfile.write("# Downloaded from %s \n\n" % fromurl)
@@ -93,7 +93,7 @@ def process_url(url):
         f.write(response.read())
 
     process_cfg(name, url)
-    
+
 
 def main():
     if 'versions.cfg' not in os.listdir('.'):
