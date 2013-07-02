@@ -6,7 +6,7 @@
 #
 # chkconfig:    2345 98 02
 # description:  Monit is a utility for managing and monitoring processes,
-#               files, directories and filesystems on a Unix system. 
+#               files, directories and filesystems on a Unix system.
 # processname:  monit
 # pidfile:      /var/run/monit.pid
 # config:       /etc/monitrc
