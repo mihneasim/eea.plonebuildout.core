@@ -63,11 +63,45 @@ the packages, since some of them are not included in the base repo.
 |libc6-dev         | glibc-devel         | -                             |
 |libxml2-dev       | libxml2-devel       | -                             |
 |libxslt-dev       | libxslt-devel       | -                             |
-|libsvn-dev        | apr-util-devel      | -                             |
-|libaprutil1-dev   | subversion-devel    | -                             |
+|libsvn-dev        | subversion-devel    | -                             |
+|libaprutil1-dev   | apr-util-devel      | -                             |
 |wv                | wv                  | http://wvware.sourceforge.net |
 |libjpeg-turbo-dev | libjpeg-turbo-devel | -                             |
 |libsasl2-dev      | cyrus-sasl-devel    | OpenLDAP                      |
 
+EEA common Plone buildout for development
+-----------------------------------------
+**TODO**
 
+EEA common Plone buildout for production
+----------------------------------------
+**TODO**
 
+Setup logs on production
+------------------------
+buildout/var/logs
+rotate
+
+GRAYLOG:
+For Zope to rich Graylog, rsyslog should be installed and configured
+under /etc/rsyslog.conf simmilar as it is under an existing backend.
+
+**TODO** add URL
+
+Setup production monitoring
+---------------------------
+MUNIN:
+Follow: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToUpgradeMunin
+Zope and Plone munin plugins should be add to munin node:
+
+ 1. $ cd /etc/munin/plugins
+ 2. create here symlinks from all files found under /var/eea-buildout-plone4/bin/munin-scripts
+ 3. create /etc/munin/plugin-conf.d/munin.zope.conf
+ 4. update /etc/munin/plugin-conf.d/munin.zope.conf similar with one from a running backend
+
+**TODO** add URL
+
+Setup testing environment
+-------------------------
+JENKINS
+**TODO**
