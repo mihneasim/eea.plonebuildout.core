@@ -69,12 +69,47 @@ the packages, since some of them are not included in the base repo.
 |libjpeg-turbo-dev | libjpeg-turbo-devel | -                             |
 |libsasl2-dev      | cyrus-sasl-devel    | OpenLDAP                      |
 
-EEA common Plone buildout for development
------------------------------------------
+How to create a new buildout
+----------------------------
+eea.plonebuildout.example
 **TODO**
 
-EEA common Plone buildout for production
-----------------------------------------
+How to use EEA common Plone buildout for development
+----------------------------------------------------
+**TODO**
+
+The first time you want to use the  EEA common Plone buildout you first have to get
+all software from GitHub and then run a few commands:
+
+```
+$ git clone git@github.com:eea/eea.plonebuildout.example.git
+$ cd eea.plonebuildout.example
+$ ./install.sh
+$ ./bin/buildout -c development.cfg
+```
+
+
+
+
+
+
+How to use EEA common Plone buildout for production
+---------------------------------------------------
+**TODO**
+* setup server side permissions and users (groups)
+
+The first time you want to use the  EEA common Plone buildout you first have to get
+all software from GitHub and then run a few commands:
+
+```
+$ git clone git@github.com:eea/eea.plonebuildout.example.git
+$ cd eea.plonebuildout.example
+$ ./install.sh
+$ ./bin/buildout -c deployment.cfg
+
+How to setup the Plone site
+---------------------------
+eea.plonebuildout.profile
 **TODO**
 
 Setup logs on production
