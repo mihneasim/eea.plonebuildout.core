@@ -1,10 +1,10 @@
 <VirtualHost *:80>
-    ServerAdmin ${conf:server-admin}
-    ServerName ${conf:www-domain}
-    ServerAlias ${conf:www-domain}
+    ServerAdmin ${configuration:server-admin}
+    ServerName ${configuration:www-domain}
+    ServerAlias ${configuration:www-domain}
 
     RewriteEngine On
 
-    RewriteRule ^/(.*) http://localhost:${conf:pound-port}/VirtualHostBase/http/${conf:www-domain}:80/${conf:plone-site}/VirtualHostRoot/$1 [P,L]
+    RewriteRule ^/(.*) http://localhost:${configuration:pound-port}/VirtualHostBase/http/${configuration:www-domain}:80/${configuration:plone-site}/VirtualHostRoot/$1 [P,L]
 
 </VirtualHost>

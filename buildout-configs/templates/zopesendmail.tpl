@@ -10,13 +10,13 @@
 . /etc/init.d/functions
 
 SOFTWARE_HOME="${buildout:directory}"
-USER=${conf:effective-user}
+USER=${configuration:effective-user}
 
 NAME="zope-sendmail"
 SENDMAIL=$SOFTWARE_HOME/bin/$NAME
-QUEUE=${conf:mail-queue}
+QUEUE=${configuration:mail-queue}
 
-prog="$SENDMAIL --daemon $QUEUE --hostname ${conf:smtp-server}"
+prog="$SENDMAIL --daemon $QUEUE --hostname ${configuration:smtp-server}"
 lockfile=/var/lock/subsys/$NAME
 
 start() {
