@@ -255,3 +255,11 @@ set httpd port 2812 and
 {% end %}
 {% end %}
 {% end %}
+
+check process zeoserver with pidfile ${parts.buildout['directory']}/var/zeoserver.pid
+    start program = "${parts.buildout['bin-directory']}/zeoserver start"
+    stop program = "${parts.buildout['bin-directory']}/zeoserver stop"
+
+check process pound with pidfile ${parts.buildout['directory']}/parts/poundconfig/var/pound.pid
+    start program = "${parts.buildout['bin-directory']}/zeoserver start"
+    stop program = "${parts.buildout['bin-directory']}/zeoserver stop"
