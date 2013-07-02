@@ -34,55 +34,40 @@ the development and production installations:
 |EEA Profile*   | configured    | configured    |
 |EEA KGS**      | configured    | configured    |
 
-\*  EEA Profile = EEA Plone Site specific profile for creation of a new
-Plone Site to auto install mandatory packages and setup EEA specific defaults
+\*  *EEA Profile = EEA Plone Site specific profile for creation of a new
+Plone Site to auto install mandatory packages and setup EEA specific defaults*
 
-\*\* EEA KGS = EEA Known good set (all packages, EEA, Plone and Zope, are pinned to a fixed version)
+\*\* *EEA KGS = EEA Known good set (all packages, EEA, Plone and Zope, are pinned to a fixed version)*
 
 System requirements
 -------------------
 The EEA common Plone buildout is intended to run on Linux/Unix-based operating systems. The
-buildout has been used and tested on Fedora, Debian, Ubuntu and Mac OS X.
+buildout has been used and tested on *Debian*, *Ubuntu* for development and *CentOS 5* and *CentoOS 6* for production.
 
-Be sure that you have this software and libraries installed on the server
-before you run buildout. These must be globally installed by the server
-administrator.
+The bellow libraries and software must be installed on the server before you run the buildout. These must
+be globally installed by the server administrator.
 
 For CentOS, the EPEL and RPMForge repositories need to be configured before installing
 the packages, since some of them are not included in the base repo.
 
-  * python 2.6
-  * python-dev (for python 2.6) (Debian/Ubuntu) / python-devel (for python 2.6) (CentOS)
-  * wget
-  * lynx
-  * poppler-utils
-     * for pdftotext etc
-  * tar
-  * gcc
-  * libc6-dev (Debian/Ubuntu) / glibc-devel (CentOS)
-  * libxml2-dev (Debian/Ubuntu) / libxml2-devel (CentOS)
-  * libxslt-dev (Debian/Ubuntu) / libxslt-devel (CentOS)
-  * libsvn-dev and libaprutil1-dev (Debian/Ubuntu) / apr-util-devel and subversion-devel (CentOS)
-  * libsasl2-dev (Debian/Ubuntu) / cyrus-sasl-devel (CentOS)
-     * OpenLDAP dependency
-  * wv
-     * used to index Word documents
-     * http://wvware.sourceforge.net
-     * may be installed after Plone install
-  * graphviz, graphviz-gd and graphviz-dev (Debian/Ubuntu) / graphviz-devel (CentOS)
-     * dependency for eea.relations
-  * xpdf
-     * read more under eea.reports
-  * pdftk and ImageMagick ver 6.3.7+
-     * read more under eea.reports
-  * git
-  * python-docutils
-     * used for <buildout_dir>/tools/unifyChangelogs.py
-  * python-ordereddict
-     * used for <buildout_dir>/tools/unifyChangelogs.py
-  * libcurl3-dev (Debian/Ubuntu) / curl-devel (CentOS)
-     * dependency for sparql-client and pycurl2
-  * libjpeg-turbo-dev (Debian/Ubuntu) / libjpeg-turbo-devel (CentOS)
+| Debian/Ubuntu    | CentOS              | dependency for                |
+| ---------------- | ------------------- | ----------------------------- |
+|python 2.6        | python 2.6          | -                             |
+|python-dev        | python-devel        | -                             |
+|wget              | wget                | -                             |
+|lynx              | lynx                | -                             |
+|poppler-utils     | poppler-utils       | pdftotext                     |
+|tar               | tar                 | -                             |
+|gcc               | gcc                 | -                             |
+|git               | git                 | -                             |
+|libc6-dev         | glibc-devel         | -                             |
+|libxml2-dev       | libxml2-devel       | -                             |
+|libxslt-dev       | libxslt-devel       | -                             |
+|libsvn-dev        | apr-util-devel      | -                             |
+|libaprutil1-dev   | subversion-devel    | -                             |
+|wv                | wv                  | http://wvware.sourceforge.net |
+|libjpeg-turbo-dev | libjpeg-turbo-devel | -                             |
+|libsasl2-dev      | cyrus-sasl-devel    | OpenLDAP                      |
 
 
 
