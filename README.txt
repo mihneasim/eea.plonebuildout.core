@@ -32,8 +32,8 @@ Memcache          configured     configured
 Email             configured     disabled
 EIONET LDAP       configured     not available
 Debugging         not available  configured
-EEA Profile [1]_  configured     configured
-EEA KGS     [2]_  configured     configured
+EEA Profile [#]_  configured     configured
+EEA KGS     [#]_  configured     configured
 ================  =============  =============
 
 System requirements
@@ -153,5 +153,5 @@ JENKINS
 
 --------
 
-.. [1] **EEA Profile:** *EEA Plone Site specific profile for creation of a new Plone Site to auto install mandatory packages and setup EEA specific defaults*
-.. [2] **EEA KGS:** *EEA Known good set (all packages, EEA, Plone and Zope, are pinned to a fixed version)*
+.. [#] **EEA Profile:** *EEA Plone Site specific profile for creation of a new Plone Site to auto install mandatory packages and setup EEA specific defaults*
+.. [#] **EEA KGS:** *EEA Known good set (all packages, EEA, Plone and Zope, are pinned to a fixed version)*
