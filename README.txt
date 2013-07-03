@@ -70,38 +70,27 @@ libsasl2-dev       cyrus-sasl-devel     OpenLDAP
 
 How to create a new EEA Plone based buildout
 --------------------------------------------
-Under EEA organisation on GitHub is provided an example of how an EEA Plone buildout should be
-made, structured and configured: https://github.com/eea/eea.plonebuildout.example
+Under EEA organisation on GitHub can be found an example of how a EEA Plone absed buildout
+should be made, structured and configured, see `eea.plonebuildout.example`_.
 
 Steps to create a new EEA Plone based buildout::
 
 $ git clone git@github.com:eea/eea.plonebuildout.example.git
 $ rmdir ./eea.plonebuildout.example/.git
-$ mv eea.plonebuildout.example eea.plonebuildout.NEW-EEA-PORTAL
+$ mv eea.plonebuildout.example eea.plonebuildout.MY-EEA-PORTAL
 
 Last step should be to add the new buildout under GitHub. To create a new repository under EEA GitHub organisation,
-one of the administrators should be contact. To do so, login under `'EEA Taskman'
-<http://taskman.eionet.europa.eu>`_ and add a issue with your request under
-`'Common infrastructure' project
-<http://taskman.eionet.europa.eu/projects/infrastructure>`_.
+one of the administrators should be contact. To do so, login under `'EEA Taskman'`_ and add a issue with your request under
+`'Common infrastructure' project`_.
 
 How to use EEA common Plone buildout for development
 ----------------------------------------------------
-**TODO**
+The first time you want to use the EEA common Plone buildout you have to run a few commands using
+your local user::
 
-The first time you want to use the  EEA common Plone buildout you first have to get
-all software from GitHub and then run a few commands::
-
-$ git clone git@github.com:eea/eea.plonebuildout.example.git
-$ cd eea.plonebuildout.example
+$ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c development.cfg
-
-
-
-
-
-
 
 How to use EEA common Plone buildout for production
 ---------------------------------------------------
@@ -109,11 +98,9 @@ How to use EEA common Plone buildout for production
 * setup server side permissions and users (groups)
 * how to Monit to stop start processes
 
-The first time you want to use the  EEA common Plone buildout you first have to get
-all software from GitHub and then run a few commands::
+The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
-$ git clone git@github.com:eea/eea.plonebuildout.example.git
-$ cd eea.plonebuildout.example
+$ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c deployment.cfg
 
@@ -135,16 +122,8 @@ under /etc/rsyslog.conf simmilar as it is under an existing backend.
 
 Setup production monitoring
 ---------------------------
-MUNIN:
-Follow: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToUpgradeMunin
-Zope and Plone munin plugins should be add to munin node:
-
- 1. $ cd /etc/munin/plugins
- 2. create here symlinks from all files found under /var/eea-buildout-plone4/bin/munin-scripts
- 3. create /etc/munin/plugin-conf.d/munin.zope.conf
- 4. update /etc/munin/plugin-conf.d/munin.zope.conf similar with one from a running backend
-
-**TODO** add URL
+The EEA uses Munin to monitor it's servers. To enable the backend monitoring of your server via Munin follow this `wiki instructions`_.
+Complete list of the Munin nodes is accesuble under http://unicorn.eea.europa.eu/munin.
 
 Setup testing environment
 -------------------------
@@ -155,3 +134,8 @@ JENKINS
 
 .. [#] **EEA Profile:** *EEA Plone Site specific profile for creation of a new Plone Site to auto install mandatory packages and setup EEA specific defaults*
 .. [#] **EEA KGS:** *EEA Known good set (all packages, EEA, Plone and Zope, are pinned to a fixed version)*
+
+.. _`'EEA Taskman'`: http://taskman.eionet.europa.eu
+.. _`'Common infrastructure' project`: http://taskman.eionet.europa.eu/projects/infrastructure
+.. _`eea.plonebuildout.example`: https://github.com/eea/eea.plonebuildout.example
+.. _`wiki instructions`: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToUpgradeMunin
