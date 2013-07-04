@@ -97,6 +97,7 @@ How to use EEA common Plone buildout for production
 **TODO**
 * setup server side permissions and users (groups)
 * how to Monit to stop start processes
+* how to write the request for a new portal: http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
 
 The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
@@ -130,6 +131,21 @@ Setup testing environment
 JENKINS
 **TODO**
 
+Deployment guidelines
+---------------------
+To deploy a new buildout on EEA servers and to keep things organised, we provide the `guidelines to follow`_ by the developers, as well as the system administrators. Ideally, the following information should be compiled in a README file, residing in the root directory of the project (e.g. /eea.plonebuildout.MY-EEA-PORTAL/README.txt). Additional resources, such as Taskman projects/wikis may be added to this documentation.
+
+The guideline document provide details about:
+
+- contact point
+- license and other metadata
+- necessary hardware resources
+- user access policy
+- deployment timeline
+- backup procedures
+
+Example of deployment guidelines applied to a deployed buildout: `land.copernicus.plonebuildout`_
+
 --------
 
 .. [#] **EEA Profile:** *EEA Plone Site specific profile for creation of a new Plone Site to auto install mandatory packages and setup EEA specific defaults*
@@ -139,3 +155,5 @@ JENKINS
 .. _`'Common infrastructure' project`: http://taskman.eionet.europa.eu/projects/infrastructure
 .. _`eea.plonebuildout.example`: https://github.com/eea/eea.plonebuildout.example
 .. _`wiki instructions`: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToUpgradeMunin
+.. _`guidelines to follow`: http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
+.. _`land.copernicus.plonebuildout`: https://github.com/eea/land.copernicus.plonebuildout/blob/master/README.rst
