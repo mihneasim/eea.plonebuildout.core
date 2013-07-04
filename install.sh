@@ -35,9 +35,6 @@ echo "Running: python2.6 /tmp/virtualenv.py --clear ."
 python2.6 "/tmp/virtualenv.py" --clear --distribute  .
 rm /tmp/virtualenv.py*
 
-#echo "Updating distribute: ./bin/easy_install" $SETUPTOOLS
-#./bin/easy_install $DISTRIBUTE
-
 echo "Installing zc.buildout: $ ./bin/easy_install" $ZCBUILDOUT
 ./bin/easy_install $ZCBUILDOUT
 
