@@ -36,8 +36,10 @@ EEA Profile [#]_  configured     configured
 EEA KGS     [#]_  configured     configured
 ================  =============  =============
 
+.. contents::
+
 System requirements
--------------------
+===================
 The EEA common Plone buildout is intended to run on Linux/Unix-based operating systems. The
 buildout has been used and tested on *Debian*, *Ubuntu* for development and *CentOS 5* and *CentoOS 6* for production.
 
@@ -69,7 +71,7 @@ libsasl2-dev       cyrus-sasl-devel     OpenLDAP
 =================  ===================  =============================
 
 How to create a new EEA Plone based buildout
---------------------------------------------
+============================================
 Under EEA organisation on GitHub can be found an example of how a EEA Plone absed buildout
 should be made, structured and configured, see `eea.plonebuildout.example`_.
 
@@ -84,7 +86,7 @@ one of the administrators should be contact. To do so, login under `'EEA Taskman
 `'Common infrastructure' project`_.
 
 How to use EEA common Plone buildout for development
-----------------------------------------------------
+====================================================
 The first time you want to use the EEA common Plone buildout you have to run a few commands using
 your local user::
 
@@ -93,7 +95,7 @@ $ ./install.sh
 $ ./bin/buildout -c development.cfg
 
 How to use EEA common Plone buildout for production
----------------------------------------------------
+===================================================
 **TODO**
 * setup server side permissions and users (groups)
 * how to Monit to stop start processes
@@ -105,13 +107,8 @@ $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c deployment.cfg
 
-How to setup the Plone site
----------------------------
-eea.plonebuildout.profile
-**TODO**
-
-Setup logs on production
-------------------------
+Setup Zope/ZEO logs
+-------------------
 buildout/var/logs
 rotate
 
@@ -121,8 +118,8 @@ under /etc/rsyslog.conf simmilar as it is under an existing backend.
 
 **TODO** add URL
 
-Setup production monitoring
----------------------------
+Setup monitoring
+----------------
 The EEA uses Munin to monitor it's servers. To enable the backend monitoring of your server via Munin follow this `wiki instructions`_.
 Complete list of the Munin nodes is accesuble under http://unicorn.eea.europa.eu/munin.
 
@@ -145,6 +142,11 @@ The guideline document provide details about:
 - backup procedures
 
 Example of deployment guidelines applied to a deployed buildout: `land.copernicus.plonebuildout`_
+
+How to setup the Plone site
+===========================
+eea.plonebuildout.profile
+**TODO**
 
 --------
 
