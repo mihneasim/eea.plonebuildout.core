@@ -193,4 +193,4 @@ More details under `License.txt`_.
 .. _`eea.plonebuildout.core`: https://github.com/eea/eea.plonebuildout.core
 .. _`eea.plonebuildout.profile`: https://github.com/eea/eea.plonebuildout.profile
 .. _`eea.plonebuildout.example`: https://github.com/eea/eea.plonebuildout.example
-.. _`License.txt`: https://github.com/eea/eea.plonebuildout.core/docs/License.txt
+.. _`License.txt`: https://github.com/eea/eea.plonebuildout.core/blob/master/docs/LICENSE.txt
