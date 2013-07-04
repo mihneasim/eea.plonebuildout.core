@@ -73,8 +73,8 @@ libjpeg-turbo-dev  libjpeg-turbo-devel  Pillow
 libsasl2-dev       cyrus-sasl-devel     OpenLDAP
 =================  ===================  =============================
 
-How to create a new EEA Plone based buildout
-============================================
+How to create a EEA Plone based buildout
+========================================
 Under EEA organisation on GitHub can be found an example of how a EEA Plone absed buildout
 should be made, structured and configured, see `eea.plonebuildout.example`_.
 
@@ -88,7 +88,7 @@ Last step should be to add the new buildout under GitHub. To create a new reposi
 one of the administrators should be contact. To do so, login under `'EEA Taskman'`_ and add a issue with your request under
 `'Common infrastructure' project`_.
 
-Once the new GitHub repository was created the new buildout can be pushed there (e.g. https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL).
+Once the new GitHub repository was created the sources of the new buildout can be pushed there (e.g. https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL).
 
 How to use EEA common Plone buildout for development
 ====================================================
@@ -148,7 +148,7 @@ Deployment guidelines
 ---------------------
 To deploy a new buildout on EEA servers and to keep things organised, we provide the `guidelines to follow`_ by the developers, as well as the system administrators. Ideally, the following information should be compiled in a README file, residing in the root directory of the project (e.g. /eea.plonebuildout.MY-EEA-PORTAL/README.txt). Additional resources, such as Taskman projects/wikis may be added to this documentation.
 
-The guideline document provide details about:
+The guideline document provide detailed informations about:
 
 - contact point
 - license and other metadata
@@ -164,6 +164,22 @@ How to setup the Plone site
 eea.plonebuildout.profile
 **TODO**
 
+Source code
+===========
+Source code can be found under EEA organisation on GitHub and consist in one package for teh core buildout, one Plone profile package and one buildout example.
+
+- `eea.plonebuildout.core`_
+- `eea.plonebuildout.profile`_
+- `eea.plonebuildout.example`_
+
+Copyright and license
+=====================
+The Initial Owner of the Original Code is European Environment Agency (EEA). All Rights Reserved.
+
+The EEA common Plone buildout (the Original Code) is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+More details under `License.txt`_.
+
 --------
 
 .. [#] **EEA Profile:** *EEA Plone Site specific profile for creation of a new Plone Site to auto install mandatory packages and setup EEA specific defaults*
@@ -171,7 +187,10 @@ eea.plonebuildout.profile
 
 .. _`'EEA Taskman'`: http://taskman.eionet.europa.eu
 .. _`'Common infrastructure' project`: http://taskman.eionet.europa.eu/projects/infrastructure
-.. _`eea.plonebuildout.example`: https://github.com/eea/eea.plonebuildout.example
 .. _`wiki instructions`: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToUpgradeMunin
 .. _`guidelines to follow`: http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
 .. _`land.copernicus.plonebuildout`: https://github.com/eea/land.copernicus.plonebuildout/blob/master/README.rst
+.. _`eea.plonebuildout.core`: https://github.com/eea/eea.plonebuildout.core
+.. _`eea.plonebuildout.profile`: https://github.com/eea/eea.plonebuildout.profile
+.. _`eea.plonebuildout.example`: https://github.com/eea/eea.plonebuildout.example
+.. _`License.txt`: https://github.com/eea/eea.plonebuildout.core/docs/License.txt
