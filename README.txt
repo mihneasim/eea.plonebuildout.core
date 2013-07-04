@@ -1,6 +1,11 @@
 =========================
 EEA common Plone buildout
 =========================
+
+.. contents::
+
+Introduction
+============
 Buildout is a tool for easily creating identical development or production
 environments. This tool gives you the right versions of Zope, Plone products
 and Python libraries to ensure that every installation gets exactly the same
@@ -35,8 +40,6 @@ Debugging         not available  configured
 EEA Profile [#]_  configured     configured
 EEA KGS     [#]_  configured     configured
 ================  =============  =============
-
-.. contents::
 
 System requirements
 ===================
@@ -85,8 +88,14 @@ Last step should be to add the new buildout under GitHub. To create a new reposi
 one of the administrators should be contact. To do so, login under `'EEA Taskman'`_ and add a issue with your request under
 `'Common infrastructure' project`_.
 
+Once the new GitHub repository was created the new buildout can be pushed there (e.g. https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL).
+
 How to use EEA common Plone buildout for development
 ====================================================
+**TODO**
+
+* how to buildout configs
+
 The first time you want to use the EEA common Plone buildout you have to run a few commands using
 your local user::
 
@@ -97,9 +106,16 @@ $ ./bin/buildout -c development.cfg
 How to use EEA common Plone buildout for production
 ===================================================
 **TODO**
-* setup server side permissions and users (groups)
-* how to Monit to stop start processes
-* how to write the request for a new portal: http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
+
+* how to buildout configs
+* AT THE END: setup server side permissions and users (groups), also update http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
+* how to Monit
+* how to use KGS
+* how to Apache
+* how to Pound
+* how to LDAP
+* how to memcached
+* how to email
 
 The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
