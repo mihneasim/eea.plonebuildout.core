@@ -61,22 +61,27 @@ wget               wget                 buildout
 lynx               lynx                 buildout
 poppler-utils      poppler-utils        pdftotext
 tar                tar                  buildout
-gcc                gcc                  --
+gcc                gcc                  buildout
 git                git                  buildout
-libc6-dev          glibc-devel          --
-libxml2-dev        libxml2-devel        --
-libxslt-dev        libxslt-devel        --
+libc6-dev          glibc-devel          buildout
+libxml2-dev        libxml2-devel        rdflib
+libxslt-dev        libxslt-devel        rdflib
 libsvn-dev         subversion-devel     buildout
-libaprutil1-dev    apr-util-devel       --
+libaprutil1-dev    apr-util-devel       buildout
 wv                 wv                   http://wvware.sourceforge.net
 libjpeg-turbo-dev  libjpeg-turbo-devel  Pillow
 libsasl2-dev       cyrus-sasl-devel     OpenLDAP
 =================  ===================  =============================
 
-How to create a EEA Plone based buildout
-========================================
-Under EEA organisation on GitHub can be found an example of how a EEA Plone absed buildout
-should be made, structured and configured, see `eea.plonebuildout.example`_.
+How to use EEA common Plone buildout
+====================================
+This section will describe the necessarily steps to create a new EEA Plone based buildout. It will document
+the usage of both development and production buildouts and how to setup and configure the environments.
+
+Step 1: create a EEA Plone based buildout
+-----------------------------------------
+Under EEA organisation on GitHub can be found an example of how a EEA Plone based buildout
+should be created, structured and configured, see `eea.plonebuildout.example`_.
 
 Steps to create a new EEA Plone based buildout::
 
@@ -84,32 +89,43 @@ $ git clone git@github.com:eea/eea.plonebuildout.example.git
 $ rmdir ./eea.plonebuildout.example/.git
 $ mv eea.plonebuildout.example eea.plonebuildout.MY-EEA-PORTAL
 
-Last step should be to add the new buildout under GitHub. To create a new repository under EEA GitHub organisation,
+Last step should be to add the new buildout sources under GitHub. To create a new repository under EEA GitHub organisation,
 one of the administrators should be contact. To do so, login under `'EEA Taskman'`_ and add a issue with your request under
 `'Common infrastructure' project`_.
 
 Once the new GitHub repository was created the sources of the new buildout can be pushed there (e.g. https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL).
 
-How to use EEA common Plone buildout for development
-====================================================
-**TODO**
+Step 2: EEA common Plone buildout for development
+-------------------------------------------------
+First step on using the EEA common Plone buildout is to setup the specific configuration needed. The list of all configurable
+settings (e.g. the number of Zope instances, port numbers, database location on file system etc.) can be found
+under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The **[configuration]** part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment it.
 
-* how to buildout configs
-
-The first time you want to use the EEA common Plone buildout you have to run a few commands using
-your local user::
+Once the buildout settings were set you have to run a few commands using your local user::
 
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
-$ ./bin/buildout -c development.cfg
+$ sudo ./bin/buildout -c development.cfg
 
-How to use EEA common Plone buildout for production
-===================================================
+To start the application with ZEO support::
+
+$ ./bin/zeoserver start
+$ ./bin/www1 start
+
+To start the application without ZEO support::
+
+$ ./bin/instance start
+
+Now we will have a running Plone buildout.
+
+Step 3: EEA common Plone buildout for production
+------------------------------------------------
 **TODO**
 
 * how to buildout configs
-* AT THE END: setup server side permissions and users (groups), also update http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
-* how to Monit
+* AT THE END: setup server side permissions and users (groups),
+* [DONE] also update http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
+* [DONE] how to Monit
 * how to use KGS
 * how to Apache
 * how to Pound
@@ -123,10 +139,13 @@ $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c deployment.cfg
 
-Setup Zope/ZEO logs
--------------------
-buildout/var/logs
-rotate
+Zope/ZEO logs
+~~~~~~~~~~~~~
+**TODO**
+
+* buildout/var/logs
+* rotate
+* graylog
 
 GRAYLOG:
 For Zope to rich Graylog, rsyslog should be installed and configured
@@ -134,18 +153,20 @@ under /etc/rsyslog.conf simmilar as it is under an existing backend.
 
 **TODO** add URL
 
-Setup monitoring
-----------------
+Monitoring
+~~~~~~~~~~
 The EEA uses Munin to monitor it's servers. To enable the backend monitoring of your server via Munin follow this `wiki instructions`_.
-Complete list of the Munin nodes is accesuble under http://unicorn.eea.europa.eu/munin.
 
-Setup testing environment
--------------------------
-JENKINS
+Complete list of EEA Munin nodes is accessible here: http://unicorn.eea.europa.eu/munin
+
+Testing environment
+~~~~~~~~~~~~~~~~~~~
 **TODO**
 
+* JENKINS
+
 Deployment guidelines
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 To deploy a new buildout on EEA servers and to keep things organised, we provide the `guidelines to follow`_ by the developers, as well as the system administrators. Ideally, the following information should be compiled in a README file, residing in the root directory of the project (e.g. /eea.plonebuildout.MY-EEA-PORTAL/README.txt). Additional resources, such as Taskman projects/wikis may be added to this documentation.
 
 The guideline document provide detailed informations about:
@@ -161,8 +182,9 @@ Example of deployment guidelines applied to a deployed buildout: `land.copernicu
 
 How to setup the Plone site
 ===========================
-eea.plonebuildout.profile
 **TODO**
+
+* eea.plonebuildout.profile
 
 Source code
 ===========
