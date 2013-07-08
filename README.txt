@@ -99,7 +99,7 @@ Step 2: EEA common Plone buildout for development
 -------------------------------------------------
 First step on using the EEA common Plone buildout is to setup the specific configuration needed. The list of all configurable
 settings (e.g. the number of Zope instances, port numbers, database location on file system etc.) can be found
-under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The **[configuration]** part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment it.
+under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment it.
 
 Once the buildout settings were set you have to run a few commands using your local user::
 
@@ -112,11 +112,13 @@ To start the application with ZEO support::
 $ ./bin/zeoserver start
 $ ./bin/www1 start
 
-To start the application without ZEO support::
+... and without ZEO support::
 
 $ ./bin/instance start
 
-Now we will have a running Plone buildout.
+Now we will have a running Plone buildout. The development buildout by default install ZEO
+and two ZEO clients (*./bin/www1* and *./bin/www2*) plus one Zope instance that can be
+used without ZEO support (*./bin/instance*).
 
 Step 3: EEA common Plone buildout for production
 ------------------------------------------------
@@ -182,9 +184,29 @@ Example of deployment guidelines applied to a deployed buildout: `land.copernicu
 
 How to setup the Plone site
 ===========================
-**TODO**
+Once we have a running buildout, either for development or production, we need to create a Plone Site. Lets presume
+we already have /www1 Zope instance up and running. Now open in any browser the following URL:
 
-* eea.plonebuildout.profile
+* http://localhost:8001
+
+In your browser you should now see the Zope root displaying the message "*Plone is up and running*". Default
+administrator credentials are:
+
+* username: *admin*
+* password: *admin*
+
+To login under Zope root, click "*Zope Management Interface*" URL and use the above username and password.
+
+To create a new Plone site follow the next steps:
+
+* click on "*Create a new Plone site*" button
+* fill in the above mentioned credentials to login as manager
+* fill in the desired values for "*Path identifier*", "*Title*" and "*Language*" fields
+* under "*Add-ons*", check only "*EEA Plone buildout profile*"
+* click "*Create Plone Site*" button found at the bottom of the page
+
+The result of all this steps will be a running Plone site under http://localhost:8001/Plone, with all
+mandatory EEA packages installed and LDAP setup for "*Eionet User Directory*".
 
 Source code
 ===========
