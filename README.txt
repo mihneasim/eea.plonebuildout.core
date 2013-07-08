@@ -99,7 +99,8 @@ Step 2: EEA common Plone buildout for development
 -------------------------------------------------
 First step on using the EEA common Plone buildout is to setup the specific configuration needed. The list of all configurable
 settings (e.g. the number of Zope instances, port numbers, database location on file system etc.) can be found
-under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment it.
+under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings
+just uncomment them.
 
 Once the buildout settings were set you have to run a few commands using your local user::
 
@@ -122,7 +123,7 @@ used without ZEO support (*./bin/instance*).
 
 Step 3: EEA common Plone buildout for production
 ------------------------------------------------
-**TODO**
+**TODO:**
 
 * how to buildout configs
 * AT THE END: setup server side permissions and users (groups),
@@ -135,16 +136,22 @@ Step 3: EEA common Plone buildout for production
 * how to memcached
 * how to email
 
+Similar, as explained in the previous chapter, th first step on using the EEA common Plone buildout is to setup
+the specific configuration needed. The list of all configurable settings (e.g. the number of Zope instances,
+port numbers, database location on file system etc.) can be found under *../eea.plonebuildout.MY-EEA-PORTAL/deployment.cfg*.
+The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment them.
+
 The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
-$ ./bin/buildout -c deployment.cfg
+$ sudo ./bin/buildout -c deployment.cfg
 
-Zope/ZEO logs
-~~~~~~~~~~~~~
+Logs
+~~~~
 **TODO**
 
+* Zope/ZEO/Pound logs
 * buildout/var/logs
 * rotate
 * graylog
@@ -196,7 +203,6 @@ administrator credentials are:
 * password: *admin*
 
 To login under Zope root, click "*Zope Management Interface*" URL and use the above username and password.
-
 To create a new Plone site follow the next steps:
 
 * click on "*Create a new Plone site*" button
