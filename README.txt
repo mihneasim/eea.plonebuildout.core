@@ -249,6 +249,22 @@ mandatory EEA packages installed and LDAP setup for "*Eionet User Directory*".
 
 New KGS available
 =================
+Whenever a new KGS is available, inside Plone, a portal message will appear
+for the managers, indicating the new available version. 
+
+To upgrade to the new KGS, change in your versions.cfg file (inside the root
+of the buildout), to point to the new KGS versions.cfg file.
+
+For example, to upgrade to KGS version 1.1, change in versions.cfg to have:
+
+    [buildout]
+    extends =
+        https://raw.github.com/eea/eea.plonebuildout.core/master/buildout-configs/kgs/1.1/versions.cfg
+
+After that, you need to rerun the buildout, restart zope instances and follow
+normal Plone upgrade procedures: first run upgrade migration for Plone, then migrate the
+remaining EEA and thirdparty packages, from the Addons section of the Site
+Setup.
 
 Source code
 ===========
