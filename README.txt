@@ -216,7 +216,7 @@ mandatory EEA packages installed and LDAP setup for "*Eionet User Directory*".
 
 Source code
 ===========
-Source code can be found under EEA organisation on GitHub and consist in one package for teh core buildout, one Plone profile package and one buildout example.
+Source code can be found under EEA organisation on GitHub and consist in one package for the core buildout, one Plone profile package and one buildout example.
 
 - `eea.plonebuildout.core`_
 - `eea.plonebuildout.profile`_
