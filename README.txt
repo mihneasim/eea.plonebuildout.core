@@ -46,11 +46,15 @@ System requirements
 The EEA common Plone buildout is intended to run on Linux/Unix-based operating systems. The
 buildout has been used and tested on *Debian*, *Ubuntu* for development and *CentOS 5* and *CentoOS 6* for production.
 
-The bellow libraries and software must be installed on the server before you run the buildout. These must
-be globally installed by the server administrator.
+The bellow system libraries must be installed on the server before you run the buildout. These must be globally
+installed by the server administrator.
 
 For CentOS, the EPEL and RPMForge repositories need to be configured before installing
 the packages, since some of them are not included in the base repo.
+
+All installs will require the basic GNU build and archive tools: gcc, g++, gmake, gnu tar, gunzip, bunzip2 and patch.
+
+On Debian/Ubuntu systems, this requirement will be taken care of by installing build-essential. On RPM systems (RedHat, Fedora, CentOS), you'll need the gcc-c++ (installs most everything needed as a dependency) and patch RPMs.
 
 =================  ===================  =============================
 Debian/Ubuntu      CentOS               dependency for
@@ -59,19 +63,26 @@ python 2.6         python 2.6           buildout
 python-dev         python-devel         buildout
 wget               wget                 buildout
 lynx               lynx                 buildout
-poppler-utils      poppler-utils        pdftotext
 tar                tar                  buildout
 gcc                gcc                  buildout
 git                git                  buildout
 libc6-dev          glibc-devel          buildout
-libxml2-dev        libxml2-devel        rdflib
-libxslt-dev        libxslt-devel        rdflib
+libxml2-dev        libxml2-devel        buildout
+libxslt-dev        libxslt-devel        buildout
 libsvn-dev         subversion-devel     buildout
 libaprutil1-dev    apr-util-devel       buildout
 wv                 wv                   http://wvware.sourceforge.net
-libjpeg-turbo-dev  libjpeg-turbo-devel  Pillow
+poppler-utils      poppler-utils        pdftotext
+libjpeg-dev        libjpeg-devel        Pillow
 libsasl2-dev       cyrus-sasl-devel     OpenLDAP
+readline-dev       readline-devel       buildout
+build-essential    make                 buildout
+libz-dev           which                buildout
+--                 patch                buildout
+--                 gcc-c++              buildout
 =================  ===================  =============================
+
+Here you can read on how to prepare a server for an out-of-the-box Plone installation: `Preparing to install Plone`_.
 
 How to use EEA common Plone buildout
 ====================================
@@ -125,18 +136,19 @@ Step 3: EEA common Plone buildout for production
 ------------------------------------------------
 **TODO:**
 
-* how to buildout configs
 * AT THE END: setup server side permissions and users (groups),
 * [DONE] also update http://taskman.eionet.europa.eu/projects/infrastructure/wiki/Deployment-guide
-* [DONE] how to Monit
-* how to use KGS
+* how to Monit
 * how to Apache
 * how to Pound
 * how to LDAP
 * how to memcached
 * how to email
+* how to use KGS
+* how to buildout configs + add more zope instances
+* how to pack Data.fs
 
-Similar, as explained in the previous chapter, th first step on using the EEA common Plone buildout is to setup
+Similar, as explained in the previous chapter, the first step on using the EEA common Plone buildout is to setup
 the specific configuration needed. The list of all configurable settings (e.g. the number of Zope instances,
 port numbers, database location on file system etc.) can be found under *../eea.plonebuildout.MY-EEA-PORTAL/deployment.cfg*.
 The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment them.
@@ -149,10 +161,29 @@ $ sudo ./bin/buildout -c deployment.cfg
 
 Logs
 ~~~~
+EEA common Plone buildout for deployment will generate logs from ZEO, Zope, Pound and Apache. All this logs have
+a default location and a default size on disk allocated for each of them.
+
+A ZEO server only maintains one log file, which records starts, stops and client connections. Unless you are
+having difficulties with ZEO client connections, this file is uninformative. It also typically grows very
+slowly — so slowly that you may never need to rotate it. In respect of this ZEO log files will not be rotated and
+the default location on disk will be:
+
+* /eea.plonebuildout.MY-EEA-PORTAL/var/log/zeoserver.log
+
+Zope client logs are of much more interest and grow more rapidly. There are two kinds of client logs, and each of your clients will maintain both, access logs and event logs. By default the logs will be rotated once they rich 100Mb in size and 3 old log files will be kept. Zope clients will write the logs on disk under /eea.plonebuildout.MY-EEA-PORTAL/var/log/, e.g.:
+
+* /eea.plonebuildout.MY-EEA-PORTAL/var/log/www1-Z2.log
+* /eea.plonebuildout.MY-EEA-PORTAL/var/log/www1.log
+
 **TODO**
 
-* Zope/ZEO/Pound logs
+* [done] ZEO logs
+* [done] Zope logs
+* Pound logs
+* Apache logs
 * buildout/var/logs
+* https://github.com/collective/collective.developermanual/blob/master/source/reference_manuals/active/deployment/logs.rst
 * rotate
 * graylog
 
@@ -216,7 +247,7 @@ mandatory EEA packages installed and LDAP setup for "*Eionet User Directory*".
 
 Source code
 ===========
-Source code can be found under EEA organisation on GitHub and consist in one package for the core buildout, one Plone profile package and one buildout example.
+Source code can be found under EEA organisation on GitHub and consist in one package for teh core buildout, one Plone profile package and one buildout example.
 
 - `eea.plonebuildout.core`_
 - `eea.plonebuildout.profile`_
@@ -244,3 +275,4 @@ More details under `License.txt`_.
 .. _`eea.plonebuildout.profile`: https://github.com/eea/eea.plonebuildout.profile
 .. _`eea.plonebuildout.example`: https://github.com/eea/eea.plonebuildout.example
 .. _`License.txt`: https://github.com/eea/eea.plonebuildout.core/blob/master/docs/LICENSE.txt
+.. _`Preparing to install Plone`: http://developer.plone.org/reference_manuals/active/deployment/preparing.html
