@@ -69,6 +69,14 @@ def process_cfg(filename, fromurl):
         vfile.truncate()
         if fromurl != 'versions.cfg':
             vfile.write("# Downloaded from %s \n\n" % fromurl)
+        else:
+            filename = os.path.abspath(filename)
+            ver = os.path.dirname(filename).split(os.path.sep)[-1]
+            vfile.write("""[configuration]
+zeoclient-environment-vars += 
+    EEA_KGS_VERSION %s
+
+""" % ver)
         out = _before + replaced(_buildout) + commented(_buildout) + _after
         vfile.write(''.join(out))
 
