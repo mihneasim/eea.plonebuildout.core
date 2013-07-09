@@ -73,7 +73,7 @@ def process_cfg(filename, fromurl):
             filename = os.path.abspath(filename)
             ver = os.path.dirname(filename).split(os.path.sep)[-1]
             vfile.write("""[configuration]
-zeoclient-environment-vars += 
+zeoclient-environment-vars +=
     EEA_KGS_VERSION %s
 
 """ % ver)
