@@ -247,24 +247,22 @@ To create a new Plone site follow the next steps:
 The result of all this steps will be a running Plone site under http://localhost:8001/Plone, with all
 mandatory EEA packages installed and LDAP setup for "*Eionet User Directory*".
 
-New KGS available
-=================
-Whenever a new KGS is available, inside Plone, a portal message will appear
-for the managers, indicating the new available version. 
+New EEA KGS available
+=====================
+Whenever a new EEA KGS (EEA Known Good Set) is released, a portal message will appear for the managers,
+indicating the new EEA KGS version available for upgrade.
 
-To upgrade to the new KGS, change in your versions.cfg file (inside the root
-of the buildout), to point to the new KGS versions.cfg file.
+To upgrade to the new EEA KGS, change in your versions.cfg file (inside the root of the buildout under /eea.plonebuildout.MY-EEA-PORTAL/versions.cfg), to point to the new KGS versions.cfg file.
 
-For example, to upgrade to KGS version 1.1, change in versions.cfg to have:
+For example, to upgrade to EEA KGS version 1.1, /eea.plonebuildout.MY-EEA-PORTAL/versions.cfg must contain::
 
     [buildout]
     extends =
         https://raw.github.com/eea/eea.plonebuildout.core/master/buildout-configs/kgs/1.1/versions.cfg
 
-After that, you need to rerun the buildout, restart zope instances and follow
-normal Plone upgrade procedures: first run upgrade migration for Plone, then migrate the
-remaining EEA and thirdparty packages, from the Addons section of the Site
-Setup.
+Once the modification has been made, re-run buildout, restart Zope instances and then follow
+normal Plone upgrade procedures: first run upgrade migration of Plone (if case), then upgrade the
+EEA and thirdparty packages.
 
 Source code
 ===========
