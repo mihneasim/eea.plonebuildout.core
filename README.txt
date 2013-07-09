@@ -147,6 +147,7 @@ Step 3: EEA common Plone buildout for production
 * how to use KGS
 * how to buildout configs + add more zope instances
 * how to pack Data.fs
+* [dascalu] how to backup
 
 Similar, as explained in the previous chapter, the first step on using the EEA common Plone buildout is to setup
 the specific configuration needed. The list of all configurable settings (e.g. the number of Zope instances,
@@ -176,13 +177,14 @@ Zope client logs are of much more interest and grow more rapidly. There are two 
 * /eea.plonebuildout.MY-EEA-PORTAL/var/log/www1-Z2.log
 * /eea.plonebuildout.MY-EEA-PORTAL/var/log/www1.log
 
+Pound
+
 **TODO**
 
 * [done] ZEO logs
 * [done] Zope logs
 * Pound logs
 * Apache logs
-* buildout/var/logs
 * https://github.com/collective/collective.developermanual/blob/master/source/reference_manuals/active/deployment/logs.rst
 * rotate
 * graylog
@@ -244,6 +246,9 @@ To create a new Plone site follow the next steps:
 
 The result of all this steps will be a running Plone site under http://localhost:8001/Plone, with all
 mandatory EEA packages installed and LDAP setup for "*Eionet User Directory*".
+
+New KGS available
+=================
 
 Source code
 ===========
