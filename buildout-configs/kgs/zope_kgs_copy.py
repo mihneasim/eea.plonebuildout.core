@@ -14,7 +14,7 @@ origins = {}    #this holds mappings of original url > filename
 
 
 def commented(lines):
-    return [("#" + l) for l in lines]
+    return [("#" + l) for l in lines] + ["\n"]
 
 
 def replaced(lines):
@@ -66,18 +66,17 @@ def process_cfg(filename, fromurl):
             elif after_buildout:
                 _after.append(line)
 
+        kgs_ver = []
         vfile.truncate()
         if fromurl != 'versions.cfg':
             vfile.write("# Downloaded from %s \n\n" % fromurl)
         else:
-            filename = os.path.abspath(filename)
-            ver = os.path.dirname(filename).split(os.path.sep)[-1]
-            vfile.write("""[configuration]
-zeoclient-environment-vars += 
-    EEA_KGS_VERSION %s
+            ver = os.path.dirname(
+                    os.path.abspath(filename)).split(os.path.sep)[-1]
+            kgs_ver.append("eea-kgs-version = %s\n\n" % ver)
 
-""" % ver)
-        out = _before + replaced(_buildout) + commented(_buildout) + _after
+        out = _before + replaced(_buildout) + kgs_ver + \
+              commented(_buildout) + _after
         vfile.write(''.join(out))
 
 
