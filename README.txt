@@ -177,8 +177,7 @@ Data.fs should be packed daily via a cron job::
 
 Backup policy
 ~~~~~~~~~~~~~
-
-**TODO** - Adrian
+The backup policy should be established with sistem administrators. Locations to be backuped, backup frequency and backup retention should be decided.
 
 Logs
 ~~~~
@@ -300,7 +299,7 @@ To create a new Plone site follow the next steps:
 * click "*Create Plone Site*" button found at the bottom of the page
 
 The result of all this steps will be a running Plone site under http://localhost:8001/Plone, with all
-mandatory EEA packages installed and LDAP mapped on "*Eionet User Directory*".
+mandatory EEA packages installed and an instance of LDAPUserFolder mapped on "*Eionet User Directory*".
 
 New EEA KGS available
 =====================
