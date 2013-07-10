@@ -176,8 +176,7 @@ Data.fs should be packed daily via a cron job::
 
 Backup policy
 ~~~~~~~~~~~~~
-
-**TODO** - Adrian
+The backup policy should be established with sistem administrators. Locations to be backuped, backup frequency and backup retention should be decided.
 
 Logs
 ~~~~
