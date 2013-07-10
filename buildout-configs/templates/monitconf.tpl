@@ -261,5 +261,9 @@ check process zeoserver with pidfile ${parts.buildout['directory']}/var/zeoserve
     stop program = "${parts.buildout['bin-directory']}/zeoserver stop"
 
 check process pound with pidfile ${parts.buildout['directory']}/parts/poundconfig/var/pound.pid
-    start program = "${parts.buildout['bin-directory']}/zeoserver start"
-    stop program = "${parts.buildout['bin-directory']}/zeoserver stop"
+    start program = "${parts.buildout['bin-directory']}/poundctl start"
+    stop program = "${parts.buildout['bin-directory']}/poundctl stop"
+
+check process zopesendmail with pidfile /var/run/zope-sendmail.pid
+    start program = "${parts.buildout['bin-directory']}/zopesendmail_ctl start"
+    stop program = "${parts.buildout['bin-directory']}/zopesendmail_ctl stop"

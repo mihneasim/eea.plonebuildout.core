@@ -145,7 +145,7 @@ $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ sudo ./bin/buildout -c deployment.cfg
 
-The above installation process will install and configure, except for Zope and ZEO, the following:
+The above installation process will install and configure, in addition to Zope and ZEO, the following:
 
 * *Apache* basic configuration
 * *Pound* for load balancing ZEO clients
@@ -155,19 +155,20 @@ The above installation process will install and configure, except for Zope and Z
 * *ZEO clients* - 8 instances
 * *ZEO*
 
-To start the application follow the next steps:
+To start the application, first install Monit as system service:
 
-**TODO** - Tiberiu
+$ cd eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d
+$ ln -s `pwd`/monit /etc/init.d/monit
+$ chkconfig --add monit
+$ service monit start
+
+Monit, when started, will automatically start Pound, ZopeSendmail daemon and Zeo + Zeo clients. Pound will load balance them and Apache will serve the website. 
 
 Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators.
 
-Monit and the daemon for sending email must be registered by system administrator as services:
 
-* /eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d/monit
-* /eea.plonebuildout.MY-EEA-PORTAL/bin/zopesendmail_ctl
-
-Database pacaking
-~~~~~~~~~~~~~~~~~
+Database packing
+~~~~~~~~~~~~~~~~
 Packing is a vital regular maintenance procedure The Plone database does not automatically prune deleted content. You must periodically pack the database to reclaim space.
 
 Data.fs should be packed daily via a cron job::
