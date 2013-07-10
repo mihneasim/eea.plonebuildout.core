@@ -302,6 +302,7 @@ The result of all this steps will be a running Plone site under http://localhost
 mandatory EEA packages installed and an instance of LDAPUserFolder mapped on "*Eionet User Directory*".
 
 The list of EEA Plone packages installed:
+
 * eea.cache
 * eea.depiction
 * eea.facetednavigation
