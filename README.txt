@@ -155,14 +155,15 @@ The above installation process will install and configure, in addition to Zope a
 * *ZEO clients* - 8 instances
 * *ZEO*
 
-To start the application, first install Monit as system service:
+To start the application, first install Monit as system service::
 
 $ cd eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d
 $ ln -s `pwd`/monit /etc/init.d/monit
 $ chkconfig --add monit
-$ service monit start
 
-Monit, when started, will automatically start Pound, ZopeSendmail daemon and Zeo + Zeo clients. Pound will load balance them and Apache will serve the website. 
+Monit, when started, will automatically start Pound, Zeo clients, ZEO and ZopeSendmail daemon. Pound will load balance them and Apache will serve the website::
+
+$ service monit start
 
 Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators.
 
