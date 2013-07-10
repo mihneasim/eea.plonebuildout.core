@@ -251,11 +251,9 @@ The EEA uses Munin to monitor it's servers. To enable the backend monitoring of 
 
 Complete list of EEA Munin nodes is accessible here: http://unicorn.eea.europa.eu/munin
 
-Testing environment
-~~~~~~~~~~~~~~~~~~~
-**TODO:**
-
-* JENKINS
+Continuous Integration
+~~~~~~~~~~~~~~~~~~~~~~
+Read more under: `How to use EEA Continuous Integration Testing server`_
 
 Deployment guidelines
 ~~~~~~~~~~~~~~~~~~~~~
@@ -350,3 +348,4 @@ More details under `License.txt`_.
 .. _`Preparing to install Plone`: http://developer.plone.org/reference_manuals/active/deployment/preparing.html
 .. _`How to add EEA packages on GitHub`: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToAddPackagesOnGithub
 .. _`EEA Graylog2`: http://logs.eea.europa.eu
+.. _`How to use EEA Continuous Integration Testing server`: http://taskman.eionet.europa.eu/projects/zope/wiki/HowToJenkins
