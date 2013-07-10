@@ -301,6 +301,19 @@ To create a new Plone site follow the next steps:
 The result of all this steps will be a running Plone site under http://localhost:8001/Plone, with all
 mandatory EEA packages installed and an instance of LDAPUserFolder mapped on "*Eionet User Directory*".
 
+The list of EEA Plone packages installed:
+* eea.cache
+* eea.depiction
+* eea.facetednavigation
+* eea.faceted.vocabularies
+* eea.faceted.inheritance
+* eea.geotags
+* eea.rdfmarshaller
+* eea.relations
+* eea.socialmedia
+* eea.tags
+* eea.translations
+
 New EEA KGS available
 =====================
 Whenever a new EEA KGS (EEA Known Good Set) is released, a portal message will appear for the managers,
