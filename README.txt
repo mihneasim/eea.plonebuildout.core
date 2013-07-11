@@ -117,7 +117,7 @@ Once the buildout settings were set you have to run a few commands using your lo
 
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
-$ sudo ./bin/buildout -c development.cfg
+$ ./bin/buildout -c development.cfg
 
 To start the application with ZEO support::
 
@@ -143,7 +143,7 @@ The first time you want to use the  EEA common Plone buildout you have to run a 
 
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
-$ sudo ./bin/buildout -c deployment.cfg
+$ ./bin/buildout -c deployment.cfg
 
 The above installation process will install and configure, in addition to Zope and ZEO, the following:
 
@@ -154,6 +154,11 @@ The above installation process will install and configure, in addition to Zope a
 * Daemon for sending *emails*
 * *ZEO clients* - 8 instances
 * *ZEO*
+
+Processes on production should be started with sudo, e.g::
+
+$ sudo ./bin/zeoserver start
+$ sudo ./bin/www1 start
 
 Install Monit as system service::
 
@@ -166,6 +171,13 @@ Monit, when started, will automatically start Pound, Zeo clients, ZEO and ZopeSe
 $ service monit start
 
 Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators.
+
+User permissions
+~~~~~~~~~~~~~~~~
+On production server, system administrators should setup:
+
+* umask 002 for all users
+* all users members of 'zope' group
 
 Database packing
 ~~~~~~~~~~~~~~~~
