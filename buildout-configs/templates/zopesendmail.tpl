@@ -66,5 +66,5 @@ case "$1" in
         exit 2
 esac
 
-#  daemon user=zope-www $SENDMAIL --daemon $QUEUE >/dev/null 2>&1 &
+#  daemon user=zope $SENDMAIL --daemon $QUEUE >/dev/null 2>&1 &
 
