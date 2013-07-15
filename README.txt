@@ -78,6 +78,7 @@ libsasl2-dev       cyrus-sasl-devel     OpenLDAP
 readline-dev       readline-devel       buildout
 build-essential    make                 buildout
 libz-dev           which                buildout
+libssl-dev         openssl-devel        buildout
 --                 patch                buildout
 --                 gcc-c++              buildout
 =================  ===================  =============================
