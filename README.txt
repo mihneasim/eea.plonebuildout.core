@@ -115,6 +115,7 @@ just uncomment them.
 
 Once the buildout settings were set you have to run a few commands using your local user::
 
+$ git clone git@github.com:eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c development.cfg
@@ -139,8 +140,15 @@ the specific configuration needed. The list of all configurable settings (e.g. t
 port numbers, database location on file system etc.) can be found under *../eea.plonebuildout.MY-EEA-PORTAL/deployment.cfg*.
 The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment them.
 
+Some preliminary preparations must be done by system administrators on the deployment server:
+
+* a user and user group called 'zope' should be created having neccesary rights
+* a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope
+
 The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
+$ cd /var/local/MY-EEA-PORTAL
+$ git clone https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c deployment.cfg
