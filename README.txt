@@ -83,7 +83,7 @@ libssl-dev         openssl-devel        buildout
 --                 gcc-c++              buildout
 =================  ===================  =============================
 
-Additional info to install git:
+Additional info to install git::
 
 $ wget http://puias.math.ias.edu/data/puias/computational/6/x86_64/git-1.8.3.1-1.sdl6.x86_64.rpm
 $ wget http://puias.math.ias.edu/data/puias/computational/6/i386/perl-Git-1.8.3.1-1.sdl6.noarch.rpm
