@@ -145,6 +145,13 @@ Some preliminary preparations must be done by system administrators on the deplo
 
 * a user and user group called 'zope' should be created having neccesary rights
 * a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope and 2775 mode
+* add under /etc/profile:
+
+```
+if [ "`id -gn`" = "zope" ]; then
+     umask 002
+fi
+```
 
 The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
