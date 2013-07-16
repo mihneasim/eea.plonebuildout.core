@@ -181,20 +181,18 @@ The above installation process will install and configure, in addition to Zope a
 
 Processes on production should be started with sudo, e.g::
 
+$ sudo ./bin/memcached start
 $ sudo ./bin/zeoserver start
 $ sudo ./bin/www1 start
+$ ...
+$ sudo ./bin/www8 start
+$ sudo ./bin/poundctl start
 
-Install Monit as system service::
+TODO: add instructions on how to restart application on server reboot
 
-$ cd eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d
-$ ln -s `pwd`/monit /etc/init.d/monit
-$ chkconfig --add monit
+Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators, e.g.::
 
-Monit, when started, will automatically start Pound, Zeo clients, ZEO and ZopeSendmail daemon. Pound will load balance them and Apache will serve the website::
-
-$ service monit start
-
-Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators.
+$ ln -s /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf /etc/httpd/conf.d/MY-EEA-PORTAL-apache-vh.conf
 
 User permissions
 ~~~~~~~~~~~~~~~~
