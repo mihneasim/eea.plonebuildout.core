@@ -125,8 +125,8 @@ Once the buildout settings were set you have to run a few commands using your lo
 $ git clone git@github.com:eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
-$ chmod -R  g+w .
 $ ./bin/buildout -c development.cfg
+$ chmod -R  g+rw .
 
 To start the application with ZEO support::
 
@@ -167,6 +167,7 @@ $ git clone https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c deployment.cfg
+$ chmod -R  g+rw .
 
 The above installation process will install and configure, in addition to Zope and ZEO, the following:
 
