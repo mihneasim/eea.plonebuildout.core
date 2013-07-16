@@ -326,6 +326,9 @@ administrator credentials are:
 * password: *admin*
 
 To login under Zope root, click "*Zope Management Interface*" URL and use the above username and password.
+
+Go under acl_users and change password for user admin.
+
 To create a new Plone site follow the next steps:
 
 * click on "*Create a new Plone site*" button
