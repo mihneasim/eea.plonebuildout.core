@@ -65,7 +65,7 @@ wget               wget                 buildout
 lynx               lynx                 buildout
 tar                tar                  buildout
 gcc                gcc                  buildout
-git                git                  buildout
+git > 1.8.3        git > 1.8.3          buildout
 libc6-dev          glibc-devel          buildout
 libxml2-dev        libxml2-devel        buildout
 libxslt-dev        libxslt-devel        buildout
@@ -82,6 +82,12 @@ libssl-dev         openssl-devel        buildout
 --                 patch                buildout
 --                 gcc-c++              buildout
 =================  ===================  =============================
+
+Additional info to install git:
+
+$ wget http://puias.math.ias.edu/data/puias/computational/6/x86_64/git-1.8.3.1-1.sdl6.x86_64.rpm
+$ wget http://puias.math.ias.edu/data/puias/computational/6/i386/perl-Git-1.8.3.1-1.sdl6.noarch.rpm
+$ yum update  git-1.8.3.1-1.sdl6.x86_64.rpm perl-Git-1.8.3.1-1.sdl6.noarch.rpm
 
 Here you can read on how to prepare a server for an out-of-the-box Plone installation: `Preparing to install Plone`_.
 
@@ -119,6 +125,7 @@ Once the buildout settings were set you have to run a few commands using your lo
 $ git clone git@github.com:eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
+$ chmod -R  g+w .
 $ ./bin/buildout -c development.cfg
 
 To start the application with ZEO support::
