@@ -163,7 +163,7 @@ The *[configuration]* part contains a comprehensive list of configurable options
 Some preliminary preparations must be done by system administrators on the deployment server:
 
 * a user and user group called 'zope' should be created having neccesary rights
-* a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope and 2775 mode
+* a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope and 2775 (rwxrwxr-x) mode
 * add under /etc/profile:
 
 ```
