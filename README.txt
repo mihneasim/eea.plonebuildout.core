@@ -83,7 +83,7 @@ libssl-dev         openssl-devel        buildout
 --                 gcc-c++              buildout
 =================  ===================  =============================
 
-Additional info to install git::
+Additional info to install git for CentOS::
 
 $ wget http://puias.math.ias.edu/data/puias/computational/6/x86_64/git-1.8.3.1-1.sdl6.x86_64.rpm
 $ wget http://puias.math.ias.edu/data/puias/computational/6/i386/perl-Git-1.8.3.1-1.sdl6.noarch.rpm
@@ -153,11 +153,11 @@ Some preliminary preparations must be done by system administrators on the deplo
 * a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope and 2775 mode
 * add under /etc/profile:
 
-```
+<pre>
 if [ "`id -gn`" = "zope" ]; then
      umask 002
 fi
-```
+</pre>
 
 The first time you want to use the  EEA common Plone buildout you have to run a few commands::
 
