@@ -1,6 +1,6 @@
-=========================
-EEA common Plone buildout
-=========================
+===================================
+EEA Common Plone Buildout (EEA-CPB)
+===================================
 
 .. contents::
 
@@ -30,12 +30,12 @@ help generate a EEA Plone buildout. Profile Plone package will install default
 consfigarions for the Plone Site, like install the mandatory EEA pacakges and setup
 EIONET LDAP under LDAPUserFolder.
 
-There are two configurations available for running EEA common Plone buildout:
+There are two configurations available for running EEA-CPB:
 
 1. one for developers
 2. one for production (deployment)
 
-EEA common Plone buildout ships with various default configurations for
+EEA-CPB ships with various default configurations for
 the development and production installations:
 
 ================  =============  =============
@@ -56,12 +56,12 @@ EEA Profile [#]_  configured     configured
 EEA KGS     [#]_  configured     configured
 ================  =============  =============
 
-System requirements
-===================
-The EEA common Plone buildout is intended to run on Linux/Unix-based operating systems. The
+System requirements and preparation for EEA-CPB
+===============================================
+The EEA-CPB is intended to run on Linux/Unix-based operating systems. The
 buildout has been used and tested on *Debian*, *Ubuntu* for development and *CentOS 5* and *CentoOS 6* for production.
 
-The bellow system libraries must be installed on the server before you run the buildout. These must be globally
+The below system libraries must be installed on the server before you run the buildout. These must be globally
 installed by the server administrator.
 
 For CentOS, the EPEL and RPMForge repositories need to be configured before installing
@@ -104,10 +104,8 @@ $ wget http://puias.math.ias.edu/data/puias/computational/6/x86_64/git-1.8.3.1-1
 $ wget http://puias.math.ias.edu/data/puias/computational/6/i386/perl-Git-1.8.3.1-1.sdl6.noarch.rpm
 $ yum update  git-1.8.3.1-1.sdl6.x86_64.rpm perl-Git-1.8.3.1-1.sdl6.noarch.rpm
 
-Here you can read on how to prepare a server for an out-of-the-box Plone installation: `Preparing to install Plone`_.
-
-How to use EEA common Plone buildout
-====================================
+How to use EEA-CPB
+==================
 This section will describe the necessarily steps to create a new EEA Plone based buildout. It will document
 the usage of both development and production buildouts and how to setup and configure the environments.
 
@@ -127,9 +125,9 @@ one of the administrators should be contact. To do so, login under `'EEA Taskman
 
 Once the new GitHub repository was created the sources of the new buildout can be pushed there (e.g. https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL).
 
-Step 2: EEA common Plone buildout for development
+Step 2: EEA-CPB for development
 -------------------------------------------------
-First step on using the EEA common Plone buildout is to setup the specific configuration needed. The list of all configurable
+First step on using the EEA-CPB is to setup the specific configuration needed. The list of all configurable
 settings (e.g. the number of Zope instances, port numbers, database location on file system etc.) can be found
 under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings
 just uncomment them.
@@ -155,9 +153,9 @@ Now we will have a running Plone buildout. The development buildout by default i
 and two ZEO clients (*./bin/www1* and *./bin/www2*) plus one Zope instance that can be
 used without ZEO support (*./bin/instance*).
 
-Step 3: EEA common Plone buildout for production
+Step 3: EEA-CPB for production
 ------------------------------------------------
-Similar, as explained in the previous chapter, the first step on using the EEA common Plone buildout is to setup
+Similar, as explained in the previous chapter, the first step on using the EEA-CPB is to setup
 the specific configuration needed. The list of all configurable settings (e.g. the number of Zope instances,
 port numbers, database location on file system etc.) can be found under *../eea.plonebuildout.MY-EEA-PORTAL/deployment.cfg*.
 The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings just uncomment them.
@@ -174,7 +172,7 @@ if [ "`id -gn`" = "zope" ]; then
 fi
 </pre>
 
-The first time you want to use the  EEA common Plone buildout you have to run a few commands::
+The first time you want to use the  EEA-CPB you have to run a few commands::
 
 $ cd /var/local/MY-EEA-PORTAL
 $ git clone https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL.git
@@ -229,7 +227,7 @@ The backup policy should be established with sistem administrators. Locations to
 
 Logs
 ~~~~
-EEA common Plone buildout for deployment will generate logs from ZEO, Zope, Pound and Apache. All this logs have
+EEA-CPB for deployment will generate logs from ZEO, Zope, Pound and Apache. All this logs have
 a default location and a default size on disk allocated for each of them.
 
 A ZEO server only maintains one log file, which records starts, stops and client connections. Unless you are
@@ -398,7 +396,7 @@ Copyright and license
 =====================
 The Initial Owner of the Original Code is European Environment Agency (EEA). All Rights Reserved.
 
-The EEA common Plone buildout (the Original Code) is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+The EEA-CPB (the Original Code) is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
 More details under `License.txt`_.
 
