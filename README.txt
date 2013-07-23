@@ -15,8 +15,10 @@ Everything is installed in a local folder. This prevents conflicts with
 already existing Python and Zope packages. Nothing other than this folder
 is touched, so the user doesn't need any special privileges.
 
-EEA common Plone buildout (EEA-CPB) was created to have a unified installation
-of all Plone deployments found on EEA servers. EEA-CPB consist in 3 packages:
+EEA common Plone buildout (EEA-CPB) was created to provide a unified installation
+of all Plone sites hosted at EEA. he above will give an harmonized framework for
+all our Plone development and it will make it easier to everybody to test,
+debug and support. EEA-CPB consist in 3 packages:
 
 * eea.plonebuildout.core
 * eea.plonebuildout.example
