@@ -24,10 +24,10 @@ debug and support. EEA-CPB consist in 3 packages:
 * eea.plonebuildout.example
 * eea.plonebuildout.profile
 
-The core package contains all the default consifgurations, packages and documentation.
+The core package contains all the default configurations, packages and documentation.
 The example package has two purposes, one as an example buildout and second to
 help generate a EEA Plone buildout. Profile Plone package will install default
-consfigarions for the Plone Site, like install the mandatory EEA pacakges and setup
+configurations for the Plone Site, like install the mandatory EEA pacakges and setup
 EIONET LDAP under LDAPUserFolder.
 
 There are two configurations available for running EEA-CPB:
