@@ -133,7 +133,7 @@ under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]
 list of configurable options. The values listed here are the buildout defaults. In order to override any of
 the settings just uncomment them.
 
-Once the buildout settings were set you have to run a few commands using your local user::
+Once the buildout settings were set you have to run a few commands using your local user (this is done on your local machine)::
 
 $ git clone git@github.com:eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
