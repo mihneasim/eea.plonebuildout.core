@@ -15,6 +15,19 @@ Everything is installed in a local folder. This prevents conflicts with
 already existing Python and Zope packages. Nothing other than this folder
 is touched, so the user doesn't need any special privileges.
 
+EEA common Plone buildout (EEA-CPB) was created to have a unified installation
+of all Plone deployments found on EEA servers. EEA-CPB consist in 3 packages:
+
+* eea.plonebuildout.core
+* eea.plonebuildout.example
+* eea.plonebuildout.profile
+
+The core package contains all the default consifgurations, packages and documentation.
+The example package has two purposes, one as an example buildout and second to
+help generate a EEA Plone buildout. Profile Plone package will install default
+consfigarions for the Plone Site, like install the mandatory EEA pacakges and setup
+EIONET LDAP under LDAPUserFolder.
+
 There are two configurations available for running EEA common Plone buildout:
 
 1. one for developers
@@ -96,8 +109,8 @@ How to use EEA common Plone buildout
 This section will describe the necessarily steps to create a new EEA Plone based buildout. It will document
 the usage of both development and production buildouts and how to setup and configure the environments.
 
-Step 1: create a EEA Plone based buildout
------------------------------------------
+Step 1: create an EEA Plone based buildout
+------------------------------------------
 Under EEA organisation on GitHub can be found an example of how a EEA Plone based buildout
 should be created, structured and configured, see `eea.plonebuildout.example`_.
 
