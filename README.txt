@@ -129,8 +129,9 @@ Step 2: EEA-CPB for development
 -------------------------------------------------
 First step on using the EEA-CPB is to setup the specific configuration needed. The list of all configurable
 settings (e.g. the number of Zope instances, port numbers, database location on file system etc.) can be found
-under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]* part contains a comprehensive list of configurable options. The values listed here are the buildout defaults. In order to override any of the settings
-just uncomment them.
+under *../eea.plonebuildout.MY-EEA-PORTAL/development.cfg*. The *[configuration]* part contains a comprehensive
+list of configurable options. The values listed here are the buildout defaults. In order to override any of
+the settings just uncomment them.
 
 Once the buildout settings were set you have to run a few commands using your local user::
 
@@ -138,7 +139,6 @@ $ git clone git@github.com:eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c development.cfg
-$ chmod -R  g+rw .
 
 To start the application with ZEO support::
 
@@ -166,11 +166,11 @@ Some preliminary preparations must be done by system administrators on the deplo
 * a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope and 2775 mode
 * add under /etc/profile:
 
-<pre>
+```
 if [ "`id -gn`" = "zope" ]; then
      umask 002
 fi
-</pre>
+```
 
 The first time you want to use the  EEA-CPB you have to run a few commands::
 
