@@ -199,7 +199,13 @@ $ ...
 $ sudo ./bin/www8 start
 $ sudo ./bin/poundctl start
 
-TODO: add instructions on how to restart application on server reboot
+For the application stack to be restarted when server reboot, the system administrator should
+add under /etc/init.d the script from eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d/restart-portal, e.g.::
+
+$ cd eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d
+$ ln -s `pwd`/restart-portal /etc/init.d/restart-portal
+$ chkconfig --add restart-portal
+$ service restart-portal start
 
 Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators, e.g.::
 
