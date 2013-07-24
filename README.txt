@@ -166,11 +166,12 @@ Some preliminary preparations must be done by system administrators on the deplo
 * a project folder must be created under /var/local/MY-EEA-PORTAL with group owner zope and 2775 (rwxrwxr-x) mode
 * add under /etc/profile:
 
-```
-if [ "`id -gn`" = "zope" ]; then
+::
+
+ if [ "`id -gn`" = "zope" ]; then
      umask 002
-fi
-```
+ fi
+
 
 The first time you want to use the  EEA-CPB you have to run a few commands::
 
@@ -179,7 +180,7 @@ $ git clone https://github.com/eea/eea.plonebuildout.MY-EEA-PORTAL.git
 $ cd eea.plonebuildout.MY-EEA-PORTAL
 $ ./install.sh
 $ ./bin/buildout -c deployment.cfg
-$ chmod -R  g+rw .
+$ chmod -R g+rw .
 
 The above installation process will install and configure, in addition to Zope and ZEO, the following:
 
