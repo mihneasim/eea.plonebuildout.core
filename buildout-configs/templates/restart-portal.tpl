@@ -11,11 +11,11 @@
 
 RETVAL=0
 SUCMD='su -s /bin/bash zope -c'
-PREFIX=${buildout:directory}
+PREFIX=${parts.buildout.directory}
 INSTANCES=("www1" "www2" "www3" "www4" "www5" "www6" "www7" "www8")
 
 start_all() {
-    $SUCMD "$$PREFIX/bin/zeoserver start"
+    $$SUCMD "$$PREFIX/bin/zeoserver start"
     for name in "$${INSTANCES[@]}"; do
         $$SUCMD "$$PREFIX/bin/$$name start"
     done
