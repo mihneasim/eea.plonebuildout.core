@@ -42,7 +42,6 @@ the development and production installations:
 configuration     production     development
 ================  =============  =============
 Apache            configured     not available
-Monit             configured     not available
 Pound             configured     not available
 Zope instances    configured     configured
 ZEO               configured     configured
@@ -186,11 +185,10 @@ The above installation process will install and configure, in addition to Zope a
 
 * *Apache* basic configuration
 * *Pound* for load balancing ZEO clients
-* *Monit* for managing and monitoring processes
 * *Memcache*
 * Daemon for sending *emails*
 * *ZEO clients* - 8 instances
-* *ZEO*
+* *ZEO server*
 
 Processes on production should be started with sudo, e.g::
 
