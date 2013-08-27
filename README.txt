@@ -205,6 +205,7 @@ add under /etc/init.d the script from eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d/r
 $ cd eea.plonebuildout.MY-EEA-PORTAL/etc/rc.d
 $ ln -s `pwd`/restart-portal /etc/init.d/restart-portal
 $ chkconfig --add restart-portal
+$ chkconfig restart-portal on
 $ service restart-portal start
 
 Apache configuration file should be symlinked from /eea.plonebuildout.MY-EEA-PORTAL/etc/apache-vh.conf under /etc/httpd/conf.d, this operation should be done by system administrators, e.g.::
