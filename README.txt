@@ -108,6 +108,8 @@ How to use EEA-CPB
 This section will describe the necessarily steps to create a new EEA Plone based buildout. It will document
 the usage of both development and production buildouts and how to setup and configure the environments.
 
+Note that all the commands stated bellow should not be executed root, your local user should be used instead.
+
 Step 1: create an EEA Plone based buildout
 ------------------------------------------
 Under EEA organisation on GitHub can be found an example of how a EEA Plone based buildout
