@@ -1,14 +1,14 @@
 #!/bin/sh
-export LD_LIBRARY_PATH=/var/local/eeaplonecommonbuildout/eea.plonebuildout.example/parts/libevent/lib
+ export LD_LIBRARY_PATH=${libevent:location}/lib
 
-PIDFILE=/var/local/eeaplonecommonbuildout/eea.plonebuildout.example/var/memcached.pid
+ PIDFILE=${buildout:directory}/var/memcached.pid.${configuration:memcache-port}
     case "$1" in
       start)
-       /var/local/eeaplonecommonbuildout/eea.plonebuildout.example/parts/memcached/bin/memcached -d -u zope -P $PIDFILE -m 2000
+       ${memcached:location}/bin/memcached -d -u ${configuration:effective-user} -P $PIDFILE -m ${configuration:memcache-size}
         ;;
       stop)
         kill `cat $PIDFILE`
-        rm -f $PIDFILE
+        rm $PIDFILE
         ;;
       restart|force-reload)
         $0 stop
