@@ -20,7 +20,10 @@ def main():
     if os.path.exists(versions_link):
         os.unlink(versions_link)
 
-    os.symlink(os.path.join(wd, 'versions.cfg'), versions_link)
+    os.symlink(
+        os.path.join(os.path.split(wd)[-1], 'versions.cfg'),
+        versions_link
+        )
 
 if __name__ == "__main__":
     main()
