@@ -6,6 +6,7 @@ and make a hard copy of those files in the given kgs folder
 
 from zc_configparser import parse
 import os
+import subprocess
 import sys
 import urllib
 
@@ -114,6 +115,17 @@ def main():
         wd = os.getcwd()
 
     process_cfg('versions.cfg', 'versions.cfg')
+
+    cmd = ['../kgs_versions_symlink.py']
+
+    try:
+        subprocess.check_call(cmd, cwd=wd, shell=True)
+    except subprocess.CalledProcessError:
+        print "error. \nGot an error while trying to generate symlink"
+        sys.exit(1)
+
+    print "done"
+    sys.exit(0)
 
 
 if __name__ == "__main__":
