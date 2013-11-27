@@ -16,12 +16,12 @@ def main():
     else:
         wd = os.getcwd()
 
-    latest_versions = os.path.join(wd, '../latest_versions.cfg')
+    latest_kgs = os.path.join(wd, '../latest_kgs')
 
-    if os.path.exists(latest_versions):
-        os.remove(latest_versions)
+    if os.path.exists(latest_kgs):
+        shutil.rmtree(latest_kgs)
 
-    shutil.copy2(os.path.join(wd, 'versions.cfg'), latest_versions)
+    shutil.copytree(wd, latest_kgs)
 
 if __name__ == "__main__":
     main()
