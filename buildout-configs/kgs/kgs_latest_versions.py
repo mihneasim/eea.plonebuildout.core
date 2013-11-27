@@ -2,6 +2,7 @@
 
 import os
 import sys
+import shutil
 
 
 def main():
@@ -15,15 +16,12 @@ def main():
     else:
         wd = os.getcwd()
 
-    versions_link = os.path.join(wd, '../latest_versions.cfg')
+    latest_kgs = os.path.join(wd, '../latest_kgs')
 
-    if os.path.exists(versions_link):
-        os.unlink(versions_link)
+    if os.path.exists(latest_kgs):
+        shutil.rmtree(latest_kgs)
 
-    os.symlink(
-        os.path.join(os.path.split(wd)[-1], 'versions.cfg'),
-        versions_link
-        )
+    shutil.copytree(wd, latest_kgs)
 
 if __name__ == "__main__":
     main()

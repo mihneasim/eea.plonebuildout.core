@@ -116,12 +116,12 @@ def main():
 
     process_cfg('versions.cfg', 'versions.cfg')
 
-    cmd = ['../kgs_versions_symlink.py']
+    cmd = ['../kgs_latest_versions.py']
 
     try:
         subprocess.check_call(cmd, cwd=wd, shell=True)
     except subprocess.CalledProcessError:
-        print "error. \nGot an error while trying to generate symlink"
+        print "error. \nGot an error while generating latest_versions.cfg"
         sys.exit(1)
 
     print "done"
