@@ -118,7 +118,7 @@ should be created, structured and configured, see `eea.plonebuildout.example`_.
 Steps to create a new EEA Plone based buildout::
 
 $ git clone https://github.com/eea/eea.plonebuildout.example.git eea.plonebuildout.MY-EEA-PORTAL
-$ rm -rf ./eea.plonebuildout.example/.git
+$ rm -rf ./eea.plonebuildout.MY-EEA-PORTAL/.git
 
 Last step should be to add the new buildout sources under GitHub. To create a new repository under EEA GitHub organisation,
 one of the administrators should be contact. To do so, login under `'EEA Taskman'`_ and add a issue with your request under
