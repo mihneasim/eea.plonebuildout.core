@@ -3,7 +3,7 @@
 # Update step 1: Update *.tpl-s used by template recipes
 
 TMP_CHECKOUT="/tmp/eea.plonebuildout.core"
-git clone https://github.com/eea/eea.plonebuildout.core.git $TMP_CHECKOUT
+git clone https://github.com/mihneasim/eea.plonebuildout.core.git $TMP_CHECKOUT
 mkdir -p ./buildout-configs/templates
 rm -rf ./buildout-configs/templates && \
     cp -r $TMP_CHECKOUT/buildout-configs/templates ./buildout-configs/
@@ -11,7 +11,7 @@ rm -rf $TMP_CHECKOUT
 
 # Update step 2: Store and inform revision via Zope Environment var in buildout
 
-json=$(curl https://api.github.com/repos/eea/eea.plonebuildout.core/commits/HEAD 2> /dev/null)
+json=$(curl https://api.github.com/repos/mihneasim/eea.plonebuildout.core/commits/HEAD 2> /dev/null)
 open=0
 buffer=""
 for (( i=0; i<${#json}; i++ )); do
