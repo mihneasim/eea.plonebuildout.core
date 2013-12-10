@@ -6,5 +6,8 @@
     RewriteEngine On
 
     RewriteRule ^/(.*) http://localhost:${configuration:pound-port}/VirtualHostBase/http/${configuration:www-domain}:80/${configuration:plone-site}/VirtualHostRoot/$1 [P,L]
+    <py:if test="${configuration:custom-vh-config}">
+        Include ${configuration:custom-vh-config}
+    </py:if>
 
 </VirtualHost>
